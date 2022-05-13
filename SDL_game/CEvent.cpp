@@ -151,11 +151,11 @@ void CEvent::OnInputBlur() {
     //Pure virtual, do nothing
 }
  
-void CEvent::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode) {
+void CEvent::OnKeyDown(SDL_Keycode sym) {
     //Pure virtual, do nothing
 }
  
-void CEvent::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode) {
+void CEvent::OnKeyUp(SDL_Keycode sym) {
     //Pure virtual, do nothing
 }
  

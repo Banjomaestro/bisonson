@@ -9,7 +9,7 @@
 #define CAnimation_hpp
 
 #include <stdio.h>
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 
 class CAnimation {
 

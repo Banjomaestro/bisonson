@@ -14,17 +14,19 @@ CSurface::CSurface(){
 SDL_Surface* CSurface::OnLoad(char* File, bool transparency){
     SDL_Surface* Surf_Temp = NULL;
     SDL_Surface* Surf_Return = NULL;
+    SDL_PixelFormat *format = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
+
     
     if ((Surf_Temp = IMG_Load(File))==NULL) {
         return NULL;
     }
     
     if (!transparency) {
-        Surf_Return = SDL_DisplayFormatAlpha(Surf_Temp);
+        Surf_Return = SDL_ConvertSurface(Surf_Temp,format,0 );
         SDL_FreeSurface(Surf_Temp);
     }
     else {
-        Surf_Return = SDL_DisplayFormat(Surf_Temp);
+        Surf_Return = SDL_ConvertSurface(Surf_Temp,format,0 );
         SDL_FreeSurface(Surf_Temp);
     }
     
@@ -75,7 +77,7 @@ bool CSurface::Transparent(SDL_Surface* Surf_Dest, int R, int G, int B) {
         return false;
     }
     
-    SDL_SetColorKey(Surf_Dest, SDL_SRCCOLORKEY | SDL_RLEACCEL, SDL_MapRGB(Surf_Dest->format, R, G, B));
+   // SDL_SetColorKey(Surf_Dest, SDL_SRCCOLORKEY | SDL_RLEACCEL, SDL_MapRGB(Surf_Dest->format, R, G, B));
     
     return true;
 }

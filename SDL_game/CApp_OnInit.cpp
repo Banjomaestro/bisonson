@@ -11,11 +11,13 @@
 bool CApp::OnInit() {
     if (SDL_Init(SDL_INIT_EVERYTHING)<0)
         return false;
+
+
+    SDL_CreateWindowAndRenderer(0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP, &sdlWindow, &sdlRenderer);
     
-    SDL_WM_SetCaption("My Game Window", "game");
-    if ((Surf_Display = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL) {
-        return false;
-    }
+    //if ((Surf_Display = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32)) == NULL) {
+    //    return false;
+   // }
     
     char img_name[] = "img/yoshi.png";
     char img_Path[strlen(Abs_path) + strlen(img_name)];
@@ -34,8 +36,7 @@ bool CApp::OnInit() {
     if (CArea::AreaControl.OnLoad(file_name, Abs_path) == false) {
         return false;
     }
-    
-    SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
+
     
     Player.X = 200;
     Player2.X = 300;

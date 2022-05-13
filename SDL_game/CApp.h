@@ -9,8 +9,8 @@
 #define CApp_h
 
 #include <iostream>
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include "CPlayer.hpp"
 #include "CSurface.hpp"
 #include "CAnimation.hpp"
@@ -25,6 +25,8 @@ private:
     char * Abs_path;
     bool Running;
     SDL_Surface* Surf_Display;
+    SDL_Renderer *sdlRenderer;
+    SDL_Window *sdlWindow;
     
 private:
     CPlayer Player;
@@ -38,8 +40,8 @@ public:
     bool OnInit();
     void drawText(SDL_Surface* Surf_Display, char* string, int size, short x, short y, uint8_t R, uint8_t G, uint8_t B);
     void OnEvent(SDL_Event* Event);
-    void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
-    void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
+    void OnKeyDown(SDL_Keycode sym);
+    void OnKeyUp(SDL_Keycode sym);
     void OnExit();
     void OnLoop();
     void OnRender();

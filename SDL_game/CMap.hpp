@@ -9,7 +9,7 @@
 #define CMap_hpp
 
 #include <stdio.h>
-#include <SDL/SDL.h>
+#include <SDL2/SDL.h>
 #include <vector>
 #include "CTile.hpp"
 #include "CSurface.hpp"

@@ -20,6 +20,5 @@ void CApp::OnRender() {
     std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
     char const *FPS = FPS_Str.c_str();
     drawText(Surf_Display, (char*) FPS, 50, 200, 200, 255, 255, 255);
-    
-    SDL_Flip(Surf_Display);
+    SDL_RenderPresent(sdlRenderer);
 }
