@@ -30,23 +30,24 @@ void CApp::OnLoop() {
 //
 //    CEntityCol::EntityColList.clear();
     
-    //update time
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-    heures = timeinfo->tm_hour;
-    minutes = timeinfo->tm_min;
-    secondes = timeinfo->tm_sec;
-  
     /* Placer ici le code de dessin */
-    glClear(GL_COLOR_BUFFER_BIT);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
     
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    
-    //placement de l'heure
-    glEnable(GL_TEXTURE_2D);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        glClearColor(255.0, 255.0, 255.0, 0.0);
+
+        glPushMatrix();
+        glLoadIdentity();
+
+        // Blue text
+        glColor3ub(0,0,0xff);
+
+        glfreetype::print(our_font, 200 /* xpos */, 200 /* ypos */, "I am Just the best");
+
+        glPopMatrix();
+
+
+    /*
     for (int i = -4; i < 4; i++) {
         int id = 0;
         if (i == -4)
@@ -65,8 +66,10 @@ void CApp::OnLoop() {
             id = 10;
         
         CSurface::drawTexture(IDtext[id], 13+i*26, 0, 26, 42, 0.6);
+        
     
     }
+    
     glBindTexture(GL_TEXTURE_2D, 0);
-    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_TEXTURE_2D);*/
 }

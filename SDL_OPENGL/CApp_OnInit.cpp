@@ -21,7 +21,7 @@ bool CApp::OnInit() {
         SDL_Quit();
         return EXIT_FAILURE;
     }
-    
+
     /* Ouverture d'une fenetre et creation d'un contexte OpenGL */
 
     SDL_Window* window;
@@ -99,7 +99,10 @@ bool CApp::OnInit() {
 //    CCamera::CameraControl.SetTarget(&Player.X, &Player.Y);
     
     ///////////////
+
     
+    our_font.init("/Library/Fonts/Arial Unicode.ttf", 25 /* size */);
+
     onWindowResized(WINDOW_WIDTH, WINDOW_HEIGHT);
 
     tabSurf[0] = IMG_Load("doc/numbers/0.png");
