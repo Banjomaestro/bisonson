@@ -36,14 +36,6 @@ void get_text_and_rect(SDL_Renderer *renderer, int x, int y, char *text,
 void displayText(){
     
 
-    SDL_Event event;
-    SDL_Rect rect1, rect2;
-    SDL_Renderer *renderer;
-    SDL_Texture *texture1, *texture2;
-    SDL_Window *window;
-    char *font_path;
-    int quit;
-
     if (argc == 1) {
         font_path = "FreeSans.ttf";
     } else if (argc == 2) {
@@ -53,9 +45,6 @@ void displayText(){
         exit(EXIT_FAILURE);
     }
 
-    /* Inint TTF. */
-    SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO);
-    SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer);
     TTF_Init();
     TTF_Font *font = TTF_OpenFont(font_path, 24);
     if (font == NULL) {
@@ -65,10 +54,8 @@ void displayText(){
     get_text_and_rect(renderer, 0, 0, "hello", font, &texture1, &rect1);
     get_text_and_rect(renderer, 0, rect1.y + rect1.h, "world", font, &texture2, &rect2);
 
-    
     /* Deinit TTF. */
     TTF_Quit();
-
 }
 
  

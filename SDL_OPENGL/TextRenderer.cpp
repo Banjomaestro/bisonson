@@ -1,13 +1,13 @@
 #include "TextRenderer.hpp"
 
-#include <ft2build.h>
 #include <freetype/freetype.h>
 #include <freetype/ftglyph.h>
 #include <freetype/ftoutln.h>
 #include <freetype/fttrigon.h>
-#include FT_FREETYPE_H
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+#include <ft2build.h>
+#include FT_FREETYPE_H
 
 #include <iostream>
 #include <string>
@@ -16,6 +16,7 @@
 
 // All ideas here ripped from a NEHE tutorial
 // http://nehe.gamedev.net/tutorial/freetype_fonts_in_opengl/24001/
+    FT_Face face;                 // Holds The Height Of The Font.
 
 namespace glfreetype {
     // Gets the first power of 2 >= 
@@ -139,7 +140,7 @@ namespace glfreetype {
      
         // The Object In Which FreeType Holds Information On A Given
         // Font Is Called A "face".
-        FT_Face face;
+        
      
         // This Is Where We Load In The Font Information From The File.
         // Of All The Places Where The Code Might Die, This Is The Most Likely,
@@ -151,7 +152,7 @@ namespace glfreetype {
         // In Terms Of 1/64ths Of Pixels.  Thus, To Make A Font
         // h Pixels High, We Need To Request A Size Of h*64.
         // (h << 6 Is Just A Prettier Way Of Writing h*64)
-        FT_Set_Char_Size( face, h << 6, h << 6, 96, 96);
+        FT_Set_Char_Size( face, h * 64, h *64, 96, 96);
      
         // Here We Ask OpenGL To Allocate Resources For
         // All The Textures And Display Lists Which We
@@ -202,14 +203,15 @@ namespace glfreetype {
 
     // Much Like NeHe's glPrint Function, But Modified To Work
     // With FreeType Fonts.
-    void print(const font_data &ft_font, float x, float y, std::string const & text)  {
+    void print(const font_data &ft_font, float x, float y, std::string const & text, int size)  {
              
         // We Want A Coordinate System Where Distance Is Measured In Window Pixels.
         pushScreenCoordinateMatrix();                                  
              
         GLuint font=ft_font.list_base;
+
         // We Make The Height A Little Bigger.  There Will Be Some Space Between Lines.
-        float h=ft_font.h/.63f;                                                
+        float h=(ft_font.h/.63f);                                                
      
         // Split text into lines
         std::stringstream ss(text);

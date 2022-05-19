@@ -101,9 +101,11 @@ bool CApp::OnInit() {
     ///////////////
 
     
-    our_font.init("/Library/Fonts/Arial Unicode.ttf", 25 /* size */);
+    our_font.init("src/fonts/Cheese_and_Wine.ttf", 10 /* size */);
 
     onWindowResized(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+    description = "Dans une galaxie de fromage il y a longtemps très longtemps, ayant marre d'être manger, les fromages voulurent leur revenge";
 
     tabSurf[0] = IMG_Load("doc/numbers/0.png");
     tabSurf[1] = IMG_Load("doc/numbers/1.png");

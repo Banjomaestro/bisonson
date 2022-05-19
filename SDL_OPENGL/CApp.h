@@ -28,9 +28,6 @@
 #include <string.h>
 #include <iostream>
 
-#include <ft2build.h>
-#include FT_FREETYPE_H
-
 #include "CEvent.hpp"
 #include "CSurface.hpp"
 #include "Define.h"
@@ -47,6 +44,8 @@ private:
     SDL_GLContext context;
     Uint32 startTime;
     glfreetype::font_data our_font;
+    int iterations = 0;
+    std::string description;
     
 private:
     time_t rawtime;

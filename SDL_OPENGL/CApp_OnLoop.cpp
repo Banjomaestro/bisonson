@@ -31,6 +31,11 @@ void CApp::OnLoop() {
 //    CEntityCol::EntityColList.clear();
     
     /* Placer ici le code de dessin */
+
+    int width = 0;
+    int height = 0;
+
+    SDL_GetWindowSize(Surf_Display,&width,&height);
     
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -42,7 +47,11 @@ void CApp::OnLoop() {
         // Blue text
         glColor3ub(0,0,0xff);
 
-        glfreetype::print(our_font, 200 /* xpos */, 200 /* ypos */, "I am Just the best");
+        iterations ++;
+
+        if(iterations>100){
+            glfreetype::print(our_font, width/2 +(iterations%1000)/4 /* xpos */,height/2+(iterations%1000)/4 /* ypos */, description.substr(0,(iterations-90)/10),100);
+        }
 
         glPopMatrix();
 
@@ -66,7 +75,6 @@ void CApp::OnLoop() {
             id = 10;
         
         CSurface::drawTexture(IDtext[id], 13+i*26, 0, 26, 42, 0.6);
-        
     
     }
     
