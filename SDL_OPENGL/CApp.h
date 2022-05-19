@@ -29,6 +29,12 @@
 
 #include "CEvent.hpp"
 #include "CSurface.hpp"
+#include "CCamera.hpp"
+#include "CFPS.hpp"
+#include "CArea.hpp"
+#include "CEntity.hpp"
+#include "CPlayer.hpp"
+#include "CAnimation.hpp"
 #include "Define.h"
 
 class CApp : public CEvent {
@@ -37,21 +43,12 @@ private:
     char * Abs_path;
     bool Running;
     SDL_Window* Surf_Display;
-    SDL_Surface* tabSurf[11];
-    GLuint IDtext[11];
     SDL_GLContext context;
     Uint32 startTime;
     
 private:
-    time_t rawtime;
-    struct tm* timeinfo;
-    int heures;
-    int minutes;
-    int secondes;
-    
-//private:
-//    CPlayer Player;
-//    CPlayer Player2;
+    CPlayer Player;
+    CPlayer Player2;
     
 public:
     CApp(char * path);
