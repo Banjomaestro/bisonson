@@ -35,7 +35,6 @@ void CApp::OnRender() {
 
     /*Affiche du texte*/
     glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);
-    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 500 /* ypos */, "Wow trop bien éwè\nYAYA &acirc");
     
     /* Echange du front et du back buffer : mise a jour de la fenetre */
     SDL_GL_SwapWindow(Surf_Display);
