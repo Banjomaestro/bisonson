@@ -63,7 +63,6 @@ public:
     
 public:
     bool OnInit();
-//    void drawText(SDL_Surface* Surf_Display, char* string, int size, short x, short y, uint8_t R, uint8_t G, uint8_t B);
     void OnEvent(SDL_Event* Event);
     void OnKeyDown(SDL_Keycode sym);
     void OnKeyUp(SDL_Keycode sym);

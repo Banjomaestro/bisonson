@@ -30,7 +30,7 @@ bool CApp::OnInit() {
         WINDOW_TITLE,
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
         WINDOW_WIDTH, WINDOW_HEIGHT,
-        SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+        SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN );
 
         if(NULL == window)
         {
@@ -71,7 +71,6 @@ bool CApp::OnInit() {
     char img_Path[strlen(Abs_path) + strlen(img_name)];
     strcpy(img_Path, Abs_path);
     strcat(img_Path + strlen(img_Path), img_name);
-    our_font.init("/Library/Fonts/Arial Unicode.ttf", 25 /* size */);
 
     if ((Player.OnLoad(img_Path, 64, 64, 8)) == false) {
         return false;
@@ -85,7 +84,8 @@ bool CApp::OnInit() {
     if (CArea::AreaControl.OnLoad(file_name, Abs_path) == false) {
         return false;
     }
-
+    
+    our_font.init("font/Sans.ttf", 25 /* size */);
 
     Player.X = 100;
     Player.Y = -150;

@@ -31,11 +31,11 @@ void CApp::OnRender() {
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);
     
-//    std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
-//    char const *FPS = FPS_Str.c_str();
-//    drawText(Surf_Display, (char*) FPS, 50, 200, 200, 255, 255, 255);
-    
-    std::cout << "FPS actuels : " << CFPS::FPSControl.GetFPS() << std::endl;
+    std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
+
+    /*Affiche du texte*/
+    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);
+    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 500 /* ypos */, "Wow trop bien éwè\nYAYA &acirc");
     
     /* Echange du front et du back buffer : mise a jour de la fenetre */
     SDL_GL_SwapWindow(Surf_Display);

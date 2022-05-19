@@ -23,10 +23,6 @@ void CApp::OnCleanup() {
     SDL_GL_DeleteContext(context);
     SDL_DestroyWindow(Surf_Display);
     our_font.clean();
-    glDeleteTextures(1, IDtext);
-    for (int i = 0; i < 11; i++) {
-        SDL_FreeSurface(tabSurf[i]);
-    }
     SDL_Quit();
     
     //TTF_Quit();

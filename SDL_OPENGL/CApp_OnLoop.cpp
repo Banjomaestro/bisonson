@@ -14,9 +14,6 @@ void CApp::OnLoop() {
         if (!CEntity::EntityList[i]) continue;
 
         CEntity::EntityList[i]->OnLoop();
-        // Blue text
-        glColor3ub(0,0,0xff);
-        glfreetype::print(our_font, 200 /* xpos */, 200 /* ypos */, "I am Just the best");
     }
 
     //Collision Events
