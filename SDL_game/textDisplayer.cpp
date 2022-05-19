@@ -10,6 +10,10 @@
 - x, y: upper left corner.
 - texture, rect: outputs.
 */
+void initialize(){
+
+}
+
 void get_text_and_rect(SDL_Renderer *renderer, int x, int y, char *text,
         TTF_Font *font, SDL_Texture **texture, SDL_Rect *rect) {
     int text_width;
@@ -28,9 +32,6 @@ void get_text_and_rect(SDL_Renderer *renderer, int x, int y, char *text,
     rect->h = text_height;
 }
 
-int main(int argc, char **argv) {
-    
-}
 
 void displayText(){
     
@@ -64,30 +65,10 @@ void displayText(){
     get_text_and_rect(renderer, 0, 0, "hello", font, &texture1, &rect1);
     get_text_and_rect(renderer, 0, rect1.y + rect1.h, "world", font, &texture2, &rect2);
 
-    quit = 0;
-    while (!quit) {
-        while (SDL_PollEvent(&event) == 1) {
-            if (event.type == SDL_QUIT) {
-                quit = 1;
-            }
-        }
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-        SDL_RenderClear(renderer);
-
-        /* Use TTF textures. */
-        SDL_RenderCopy(renderer, texture1, NULL, &rect1);
-        SDL_RenderCopy(renderer, texture2, NULL, &rect2);
-
-        SDL_RenderPresent(renderer);
-    }
-
+    
     /* Deinit TTF. */
-    SDL_DestroyTexture(texture1);
-    SDL_DestroyTexture(texture2);
     TTF_Quit();
 
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-    return EXIT_SUCCESS;
 }
+
+ 

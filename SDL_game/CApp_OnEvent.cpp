@@ -12,7 +12,7 @@ void CApp::OnEvent(SDL_Event *Event) {
     CEvent::OnEvent(Event);
 }
 
-void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode) {
+void CApp::OnKeyDown(SDL_Keycode sym) {
     switch (sym) {
         case SDLK_LEFT:
             Player.MoveLeft = true;
@@ -31,7 +31,7 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode) {
     }
 }
 
-void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode) {
+void CApp::OnKeyUp(SDL_Keycode sym) {
     switch (sym) {
         case SDLK_LEFT:
             Player.MoveLeft = false;

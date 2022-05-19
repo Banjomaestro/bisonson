@@ -21,7 +21,7 @@ bool CApp::OnInit() {
         SDL_Quit();
         return EXIT_FAILURE;
     }
-    
+
     /* Ouverture d'une fenetre et creation d'un contexte OpenGL */
 
     SDL_Window* window;
@@ -71,6 +71,7 @@ bool CApp::OnInit() {
     char img_Path[strlen(Abs_path) + strlen(img_name)];
     strcpy(img_Path, Abs_path);
     strcat(img_Path + strlen(img_Path), img_name);
+    our_font.init("/Library/Fonts/Arial Unicode.ttf", 25 /* size */);
 
     if ((Player.OnLoad(img_Path, 64, 64, 8)) == false) {
         return false;

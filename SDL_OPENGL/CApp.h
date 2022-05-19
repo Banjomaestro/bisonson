@@ -10,6 +10,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #if defined(__APPLE__)
 #define GL_SILENCE_DEPRECATION
 #include <OpenGL/gl.h>
@@ -27,6 +28,9 @@
 #include <string.h>
 #include <iostream>
 
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
 #include "CEvent.hpp"
 #include "CSurface.hpp"
 #include "CCamera.hpp"
@@ -36,6 +40,7 @@
 #include "CPlayer.hpp"
 #include "CAnimation.hpp"
 #include "Define.h"
+#include "TextRenderer.hpp"
 
 class CApp : public CEvent {
     
@@ -45,6 +50,7 @@ private:
     SDL_Window* Surf_Display;
     SDL_GLContext context;
     Uint32 startTime;
+    glfreetype::font_data our_font;
     
 private:
     CPlayer Player;
