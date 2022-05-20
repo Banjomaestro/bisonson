@@ -30,6 +30,7 @@ public:
 public:
     static void drawTexture(GLuint texture, float x, float y, float w, float h, float scale);
     static void drawTexture(GLuint texture, float x, float y, float x1, float y1, float x2, float y2, float w_tex, float h_tex, float w, float h, float scale);
+    static void drawIndicator(float x, float y, float w, float h, float scale);
 };
 
 #endif /* CSurface_hpp */

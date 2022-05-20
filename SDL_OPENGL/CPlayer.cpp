@@ -13,6 +13,7 @@ CPlayer::CPlayer() {
     Col_Width_R = 32;
     Col_Height_T = 25;
     Col_Height_B = 37;
+    selected = false;
 }
 
 bool CPlayer::OnLoad(char *File, int Width, int Height, int MaxFrames) {
@@ -27,6 +28,10 @@ void CPlayer::OnLoop() {
 
 void CPlayer::OnRender() {
     CEntity::OnRender();
+    
+    if (selected) {
+        CSurface::drawIndicator(X - CCamera::CameraControl.GetX(), Y - CCamera::CameraControl.GetY(), Width, Height,1);
+    }
 }
 
 void CPlayer::OnCleanup() {

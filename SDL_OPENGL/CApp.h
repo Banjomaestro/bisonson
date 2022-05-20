@@ -53,8 +53,8 @@ private:
     glfreetype::font_data our_font;
     
 private:
-    CPlayer Player;
-    CPlayer Player2;
+    static std::vector<CPlayer*> PlayerList;
+    int PlayerNB;
     
 public:
     CApp(char * path);
