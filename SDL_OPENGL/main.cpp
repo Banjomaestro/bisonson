@@ -1,5 +1,6 @@
 #include "CApp.h"
 
+std::vector<CPlayer*> CApp::PlayerList;
 
 CApp::CApp(char* path) {
     char * temp = nullptr;
@@ -11,7 +12,7 @@ CApp::CApp(char* path) {
     Abs_path = path;
     Surf_Display = NULL;
     Running = true;
-    //TTF_Init();
+    PlayerNB = 0;
 }
 
 int CApp::OnExecute()

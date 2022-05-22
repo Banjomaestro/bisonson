@@ -14,6 +14,9 @@
 class CPlayer : public CEntity {
     
 public:
+    bool selected;
+    
+public:
     CPlayer();
     
     bool OnLoad(char* File, int Width, int Height, int MaxFrames);

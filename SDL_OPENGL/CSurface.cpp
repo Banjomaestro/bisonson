@@ -12,7 +12,7 @@ CSurface::CSurface(){
 }
 
 void CSurface::drawTexture(GLuint texture, float x, float y, float w, float h, float scale) {
-    //coord x,y, size w,h, scale = 1
+    //coord x,y, size w,h, scale
     glBindTexture(GL_TEXTURE_2D, texture);
 
     glPushMatrix();
@@ -34,12 +34,11 @@ void CSurface::drawTexture(GLuint texture, float x, float y, float w, float h, f
     glEnd();
 
     glPopMatrix();
-    //
 }
 
 
 void CSurface::drawTexture(GLuint texture, float x, float y, float x1, float y1, float x2, float y2, float w_tex, float h_tex, float w, float h, float scale) {
-    //coord x,y, size w,h, scale = 1
+    //coord x,y, size w,h, scale
     glBindTexture(GL_TEXTURE_2D, texture);
 
     glPushMatrix();
@@ -61,5 +60,25 @@ void CSurface::drawTexture(GLuint texture, float x, float y, float x1, float y1,
     glEnd();
 
     glPopMatrix();
-    //
+}
+
+void CSurface::drawIndicator(float x, float y, float w, float h, float scale) {
+    //coord x,y, size w,h, scale
+
+    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    glPushMatrix();
+    glTranslatef(x*scale, (y+h*0.8)*scale, 0);
+    glScalef((w*0.4)*scale, (h*0.13)*scale, 0);
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1., 1., 1.);
+    
+    glVertex2f( 0 , -0.5);
+    glVertex2f( -0.5 , 0.5);
+    glVertex2f( 0.5 , 0.5);
+
+    glEnd();
+
+    glPopMatrix();
 }

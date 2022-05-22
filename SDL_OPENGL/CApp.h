@@ -57,8 +57,8 @@ private:
     sf::Music music;
     
 private:
-    CPlayer Player;
-    CPlayer Player2;
+    static std::vector<CPlayer*> PlayerList;
+    int PlayerNB;
     
 public:
     CApp(char * path);
