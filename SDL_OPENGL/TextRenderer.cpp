@@ -4,9 +4,6 @@
 #include <freetype/ftglyph.h>
 #include <freetype/ftoutln.h>
 #include <freetype/fttrigon.h>
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#include <ft2build.h>
 #include FT_FREETYPE_H
 
 #include <iostream>
@@ -82,7 +79,7 @@ namespace glfreetype {
         storeTextureData(width, height, bitmap, expanded_data);
 
         // Texture parameters.
-        glBindTexture( GL_TEXTURE_2D, tex_base[ch]);
+        glBindTexture( GL_TEXTURE_2D, tex_base[(unsigned int)ch]);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -98,7 +95,7 @@ namespace glfreetype {
         // Create the display list
         glNewList(list_base+ch,GL_COMPILE);
      
-        glBindTexture(GL_TEXTURE_2D,tex_base[ch]);
+        glBindTexture(GL_TEXTURE_2D, tex_base[(unsigned int)ch]);
      
         glPushMatrix();
      
@@ -203,8 +200,10 @@ namespace glfreetype {
 
     // Much Like NeHe's glPrint Function, But Modified To Work
     // With FreeType Fonts.
-    void print(const font_data &ft_font, float x, float y, std::string const & text, int size)  {
-             
+    void print(const int R, const int G, const int B, const font_data &ft_font, float x, float y, std::string const & text)  {
+        
+        glColor3ub(R,G,B);
+        
         // We Want A Coordinate System Where Distance Is Measured In Window Pixels.
         pushScreenCoordinateMatrix();                                  
              
@@ -262,5 +261,7 @@ namespace glfreetype {
         glPopAttrib();         
      
         pop_projection_matrix();
+        
+        glColor3ub(255,255,255);
     }
 }

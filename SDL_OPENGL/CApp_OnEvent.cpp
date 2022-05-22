@@ -23,15 +23,15 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
         OnExit();
     switch (sym) {
         case SDLK_LEFT:
-            //Player.MoveLeft = true;
+            Player.MoveLeft = true;
             break;
             
         case SDLK_RIGHT:
-            //Player.MoveRight = true;
+            Player.MoveRight = true;
             break;
             
         case SDLK_SPACE:
-            //Player.Jump();
+            Player.Jump();
             break;
             
         default:
@@ -42,11 +42,11 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
 void CApp::OnKeyUp(SDL_Keycode sym) {
     switch (sym) {
         case SDLK_LEFT:
-            //Player.MoveLeft = false;
+            Player.MoveLeft = false;
             break;
             
         case SDLK_RIGHT:
-            //Player.MoveRight = false;
+            Player.MoveRight = false;
             break;
             
         default:

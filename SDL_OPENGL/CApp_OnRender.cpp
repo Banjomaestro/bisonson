@@ -9,17 +9,32 @@
 #include "CApp.h"
 
 void CApp::OnRender() {
-    //CArea::AreaControl.OnRender(Surf_Display, -CCamera::CameraControl.GetX(), -CCamera::CameraControl.GetY());
+    /* Placer ici le code de dessin */
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(7.0/255,105.0/255,151.0/255,1);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-//    for (int i = 0; i < CEntity::EntityList.size(); i++) {
-//        if (!CEntity::EntityList[i]) continue;
-//
-//        CEntity::EntityList[i]->OnRender(Surf_Display);
-//    }
+    glEnable(GL_TEXTURE_2D);
     
-//    std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
-//    char const *FPS = FPS_Str.c_str();
-//    drawText(Surf_Display, (char*) FPS, 50, 200, 200, 255, 255, 255);
+    CArea::AreaControl.OnRender();
+    
+    for (int i = 0; i < CEntity::EntityList.size(); i++) {
+        if (!CEntity::EntityList[i]) continue;
+
+        CEntity::EntityList[i]->OnRender();
+    }
+    
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glDisable(GL_TEXTURE_2D);
+    
+    std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
+
+    /*Affiche du texte*/
+    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);
     
     /* Echange du front et du back buffer : mise a jour de la fenetre */
     SDL_GL_SwapWindow(Surf_Display);

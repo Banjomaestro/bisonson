@@ -30,8 +30,18 @@
 
 #include "CEvent.hpp"
 #include "CSurface.hpp"
+#include "CCamera.hpp"
+#include "CFPS.hpp"
+#include "CArea.hpp"
+#include "CEntity.hpp"
+#include "CPlayer.hpp"
+#include "CAnimation.hpp"
 #include "Define.h"
 #include "TextRenderer.hpp"
+#include <SFML/Audio.hpp>
+
+
+
 
 class CApp : public CEvent {
     
@@ -39,24 +49,16 @@ private:
     char * Abs_path;
     bool Running;
     SDL_Window* Surf_Display;
-    SDL_Surface* tabSurf[11];
-    GLuint IDtext[11];
     SDL_GLContext context;
     Uint32 startTime;
     glfreetype::font_data our_font;
     int iterations = 0;
     std::string description;
+    sf::Music music;
     
 private:
-    time_t rawtime;
-    struct tm* timeinfo;
-    int heures;
-    int minutes;
-    int secondes;
-    
-//private:
-//    CPlayer Player;
-//    CPlayer Player2;
+    CPlayer Player;
+    CPlayer Player2;
     
 public:
     CApp(char * path);
@@ -65,7 +67,6 @@ public:
     
 public:
     bool OnInit();
-//    void drawText(SDL_Surface* Surf_Display, char* string, int size, short x, short y, uint8_t R, uint8_t G, uint8_t B);
     void OnEvent(SDL_Event* Event);
     void OnKeyDown(SDL_Keycode sym);
     void OnKeyUp(SDL_Keycode sym);

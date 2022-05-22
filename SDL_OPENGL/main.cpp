@@ -1,5 +1,6 @@
 #include "CApp.h"
 
+
 CApp::CApp(char* path) {
     char * temp = nullptr;
     temp = strrchr(path, '/');
@@ -42,6 +43,7 @@ int CApp::OnExecute()
 }
 
 int main(int argc, char * argv[]) {
+
     CApp theApp((char *) argv[0]);
     return theApp.OnExecute();
 }

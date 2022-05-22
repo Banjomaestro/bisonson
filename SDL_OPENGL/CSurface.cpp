@@ -38,7 +38,7 @@ void CSurface::drawTexture(GLuint texture, float x, float y, float w, float h, f
 }
 
 
-void CSurface::drawTexture(GLuint texture, float x, float y, float x2, float y2, float w_tex, float h_tex, float w, float h, float scale) {
+void CSurface::drawTexture(GLuint texture, float x, float y, float x1, float y1, float x2, float y2, float w_tex, float h_tex, float w, float h, float scale) {
     //coord x,y, size w,h, scale = 1
     glBindTexture(GL_TEXTURE_2D, texture);
 
@@ -49,13 +49,13 @@ void CSurface::drawTexture(GLuint texture, float x, float y, float x2, float y2,
 
     glBegin(GL_QUADS);
 
-    glTexCoord2f(x/w_tex, y/h_tex);
+    glTexCoord2f(x1/w_tex, y1/h_tex);
     glVertex2f( -0.5 , 0.5);
-    glTexCoord2f(x2/w_tex, y/h_tex);
+    glTexCoord2f(x2/w_tex, y1/h_tex);
     glVertex2f( 0.5 , 0.5);
     glTexCoord2f(x2/w_tex, y2/h_tex);
     glVertex2f( 0.5 , -0.5);
-    glTexCoord2f(x/h_tex, y2/h_tex);
+    glTexCoord2f(x1/w_tex, y2/h_tex);
     glVertex2f( -0.5 , -0.5);
 
     glEnd();

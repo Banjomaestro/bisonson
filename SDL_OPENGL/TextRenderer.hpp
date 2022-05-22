@@ -1,5 +1,14 @@
 #pragma once
+#if defined(__APPLE__)
+#define GL_SILENCE_DEPRECATION
 #include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
+#endif
 #include <string>
 #include <vector>
 
@@ -27,6 +36,7 @@ namespace glfreetype {
     // The Flagship Function Of The Library - This Thing Will Print
     // Out Text At Window Coordinates X, Y, Using The Font ft_font.
     // The Current Modelview Matrix Will Also Be Applied To The Text.
-    void print(font_data const & ft_font, float x, float y,  std::string const & text, int size);
+    void print(const int R, const int G, const int B, font_data const & ft_font, float x, float y,  
+               std::string const & text);
 
 }
