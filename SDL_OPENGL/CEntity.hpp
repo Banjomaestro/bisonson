@@ -64,6 +64,10 @@ protected:
 public:
     float MaxSpeedX;
     float MaxSpeedY;
+
+    float JumpFactor;
+
+    float YAccelerator;
     
 protected:
     int CurrentFrameCol;
@@ -83,7 +87,7 @@ public:
     virtual ~CEntity();
     
 public:
-    virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames);
+    virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames, float jumpFactor);
     virtual void OnLoop();
     virtual void OnRender();
     virtual void OnCleanup();

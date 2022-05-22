@@ -16,8 +16,8 @@ CPlayer::CPlayer() {
     selected = false;
 }
 
-bool CPlayer::OnLoad(char *File, int Width, int Height, int MaxFrames) {
-    if (!CEntity::OnLoad(File, Width, Height, MaxFrames)) return false;
+bool CPlayer::OnLoad(char *File, int Width, int Height, int MaxFrames, float jumpFactor) {
+    if (!CEntity::OnLoad(File, Width, Height, MaxFrames, jumpFactor)) return false;
     
     return true;
 }

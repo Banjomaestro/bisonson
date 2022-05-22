@@ -73,14 +73,14 @@ bool CApp::OnInit() {
     strcat(img_Path + strlen(img_Path), img_name);
 
     CPlayer* tempPlayer = new CPlayer();
-    if ((tempPlayer->OnLoad(img_Path, 64, 64, 8)) == false) {
+    if ((tempPlayer->OnLoad(img_Path, 64, 64, 8,10)) == false) {
         return false;
     }
 
     PlayerList.push_back(tempPlayer);
     
     tempPlayer = new CPlayer();
-    if ((tempPlayer->OnLoad(img_Path, 64, 64, 8)) == false) {
+    if ((tempPlayer->OnLoad(img_Path, 64, 64, 8,100)) == false) {
         return false;
     }
 

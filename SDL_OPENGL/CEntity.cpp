@@ -13,6 +13,8 @@ CEntity::CEntity() {
     
     X = Y = 0.0f;
     Width = Height = 0;
+
+    JumpFactor = 0;
     
     MoveLeft = MoveRight = false;
     Type = ENTITY_TYPE_GENERIC;
@@ -37,15 +39,17 @@ CEntity::~CEntity() {
     
 }
 
-bool CEntity::OnLoad(char* File, int Width, int Height, int MaxFrames) {
+bool CEntity::OnLoad(char* File, int Width, int Height, int MaxFrames, float jumpFactor) {
     Surf_Entity = IMG_Load(File);
     
+    JumpFactor = jumpFactor;
+
     glGenTextures(1, &ID_Entity);
     glBindTexture(GL_TEXTURE_2D, ID_Entity);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, Surf_Entity->w, Surf_Entity->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, Surf_Entity->pixels);
     glBindTexture(GL_TEXTURE_2D, 0);
-    
+    MaxSpeedY += jumpFactor;
     this->Width = Width;
     this->Height = Height;
     
@@ -195,7 +199,7 @@ void CEntity::StopMove() {
 bool CEntity::Jump() {
     if (!CanJump) return false;
     
-    SpeedY = MaxSpeedY;
+    SpeedY = MaxSpeedY+JumpFactor;
     
     return true;
 }

@@ -89,8 +89,6 @@ void CArea::OnRender() {
         FirstID = FirstID - ((-(CameraY - WINDOW_HEIGHT/2) / MapHeight) * AreaSize);
     }
         
-       
-    
     for (int i = 0; i < 4; i++) {
         int ID = FirstID + ((i / 2) * AreaSize) + (i%2);
         

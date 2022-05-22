@@ -19,7 +19,7 @@ public:
 public:
     CPlayer();
     
-    bool OnLoad(char* File, int Width, int Height, int MaxFrames);
+    bool OnLoad(char* File, int Width, int Height, int MaxFrames, float jumpFactor);
     void OnLoop();
     void OnRender();
     void OnCleanup();
