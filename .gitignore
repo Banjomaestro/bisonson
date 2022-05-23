@@ -2,3 +2,7 @@
 SDL_game/.DS_Store
 
 .DS_Store
+
+*.o
+
+SDL_OPENGL/SDL_GL

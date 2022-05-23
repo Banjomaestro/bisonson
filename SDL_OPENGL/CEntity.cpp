@@ -47,7 +47,7 @@ bool CEntity::OnLoad(char* infoFile, int playerNum) {
     if (FileHandle == NULL) {
         return false;
     }
-    char File[15];
+    char File[255];
     int MaxFrames = 0;
 
     char c;

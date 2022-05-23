@@ -52,7 +52,7 @@ private:
     SDL_GLContext context;
     Uint32 startTime;
     glfreetype::font_data our_font;
-    int iterations = 0;
+    int iterations;
     std::string description;
     sf::Music music;
     

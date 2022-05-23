@@ -13,6 +13,7 @@ CApp::CApp(char* path) {
     Surf_Display = NULL;
     Running = true;
     PlayerNB = 0;
+    iterations = 0;
 }
 
 int CApp::OnExecute()

@@ -72,14 +72,14 @@ bool CApp::OnInit() {
     CPlayer* tempPlayer = new CPlayer();
         printf("please print");
 
-    if ((tempPlayer->OnLoad("players/list.txt",1)) == false) {
+    if ((tempPlayer->OnLoad((char *)"players/list.txt",1)) == false) {
         return false;
     }
 
     PlayerList.push_back(tempPlayer);
     
     tempPlayer = new CPlayer();
-    if ((tempPlayer->OnLoad("players/list.txt",0)) == false) {
+    if ((tempPlayer->OnLoad((char *)"players/list.txt",0)) == false) {
         return false;
     }
 

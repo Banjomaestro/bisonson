@@ -79,6 +79,17 @@ void CSurface::drawIndicator(float x, float y, float w, float h, float scale) {
     glVertex2f( 0.5 , 0.5);
 
     glEnd();
+    
+    glBegin(GL_LINE_LOOP);
+    glColor3f(0., 0., 0.);
+    
+    glVertex2f( 0 , -0.5);
+    glVertex2f( -0.5 , 0.5);
+    glVertex2f( 0.5 , 0.5);
 
+    glEnd();
+
+    glColor3f(1., 1., 1.);
+    
     glPopMatrix();
 }

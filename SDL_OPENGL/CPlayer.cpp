@@ -9,10 +9,10 @@
 
 CPlayer::CPlayer() {
     Type = ENTITY_TYPE_PLAYER;
-    Col_Width_L = 15;
-    Col_Width_R = 32;
-    Col_Height_T = 64;
-    Col_Height_B = 37;
+    Col_Width_L = 8;
+    Col_Width_R = 24;
+    Col_Height_T = 25;
+    Col_Height_B = 39;
     selected = false;
 }
 
