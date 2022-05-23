@@ -90,7 +90,7 @@ bool CApp::OnInit() {
         return false;
     }
     
-    our_font.init("font/Sans.ttf", 25 /* size */);
+    our_font.init("font/Fiesta.ttf", 25 /* size */);
 
     PlayerList[0]->X = 100;
     PlayerList[0]->Y = -150;

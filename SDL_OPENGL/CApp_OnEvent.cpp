@@ -34,7 +34,7 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
             PlayerList[PlayerNB]->Jump();
             break;
             
-        case SDLK_DOWN:
+        case SDLK_TAB:
             PlayerList[PlayerNB]->unSelect();
             PlayerNB = (PlayerNB+1)%PlayerList.size();
             PlayerList[PlayerNB]->selected = true;
