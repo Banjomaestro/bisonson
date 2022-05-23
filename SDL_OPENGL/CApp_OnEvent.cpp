@@ -35,7 +35,7 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
             break;
             
         case SDLK_DOWN:
-            PlayerList[PlayerNB]->selected = false;
+            PlayerList[PlayerNB]->unSelect();
             PlayerNB = (PlayerNB+1)%PlayerList.size();
             PlayerList[PlayerNB]->selected = true;
             CCamera::CameraControl.SetTarget(&PlayerList[PlayerNB]->X, &PlayerList[PlayerNB]->Y);

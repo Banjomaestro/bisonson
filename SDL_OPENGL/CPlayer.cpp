@@ -11,14 +11,14 @@ CPlayer::CPlayer() {
     Type = ENTITY_TYPE_PLAYER;
     Col_Width_L = 15;
     Col_Width_R = 32;
-    Col_Height_T = 25;
+    Col_Height_T = 64;
     Col_Height_B = 37;
     selected = false;
 }
 
-bool CPlayer::OnLoad(char *File, int Width, int Height, int MaxFrames, float jumpFactor) {
-    if (!CEntity::OnLoad(File, Width, Height, MaxFrames, jumpFactor)) return false;
-    
+bool CPlayer::OnLoad(char* File, int playerNum) {
+
+    if (!CEntity::OnLoad(File, playerNum)) return false;
     return true;
 }
 
@@ -53,4 +53,10 @@ bool CPlayer::OnCollision(CEntity *Entity) {
     Jump();
     
     return true;
+}
+
+void CPlayer :: unSelect(){
+    selected = false;
+    MoveLeft = false;
+    MoveRight = false;    
 }

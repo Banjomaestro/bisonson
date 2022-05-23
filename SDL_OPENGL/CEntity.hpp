@@ -87,7 +87,7 @@ public:
     virtual ~CEntity();
     
 public:
-    virtual bool OnLoad(char* File, int Width, int Height, int MaxFrames, float jumpFactor);
+    virtual bool OnLoad(char* File, int playerNum);
     virtual void OnLoop();
     virtual void OnRender();
     virtual void OnCleanup();

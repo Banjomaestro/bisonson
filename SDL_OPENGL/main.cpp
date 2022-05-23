@@ -18,7 +18,7 @@ CApp::CApp(char* path) {
 int CApp::OnExecute()
 {
     if (OnInit()==false)
-        return -1;
+       return -1;
   
     /* Boucle principale */
     while(Running)
@@ -44,6 +44,7 @@ int CApp::OnExecute()
 }
 
 int main(int argc, char * argv[]) {
+                printf("please print");
 
     CApp theApp((char *) argv[0]);
     return theApp.OnExecute();

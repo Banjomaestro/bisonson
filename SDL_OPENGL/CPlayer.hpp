@@ -19,12 +19,13 @@ public:
 public:
     CPlayer();
     
-    bool OnLoad(char* File, int Width, int Height, int MaxFrames, float jumpFactor);
+    bool OnLoad(char* File, int playerNum);
     void OnLoop();
     void OnRender();
     void OnCleanup();
     void OnAnimate();
     bool OnCollision(CEntity* Entity);
+    void unSelect();
 };
 
 #endif /* CPlayer_hpp */

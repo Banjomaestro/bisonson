@@ -56,7 +56,6 @@ private:
     std::string description;
     sf::Music music;
     
-private:
     static std::vector<CPlayer*> PlayerList;
     int PlayerNB;
     
@@ -65,7 +64,6 @@ public:
     void onWindowResized(unsigned int width, unsigned int height);
     int OnExecute();
     
-public:
     bool OnInit();
     void OnEvent(SDL_Event* Event);
     void OnKeyDown(SDL_Keycode sym);

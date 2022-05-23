@@ -39,19 +39,38 @@ CEntity::~CEntity() {
     
 }
 
-bool CEntity::OnLoad(char* File, int Width, int Height, int MaxFrames, float jumpFactor) {
+bool CEntity::OnLoad(char* infoFile, int playerNum) {
+    
+    
+    FILE* FileHandle = fopen(infoFile, "r");
+    
+    if (FileHandle == NULL) {
+        return false;
+    }
+    char File[15];
+    int MaxFrames = 0;
+
+    char c;
+    int lines = 0;
+
+    while (lines < playerNum){
+        
+        c = fgetc(FileHandle);
+
+        if(c=='\n')
+         lines++;
+    } 
+    
+    fscanf(FileHandle, "%s %d %d %d %f", File, &Width, &Height, &MaxFrames, &JumpFactor);
+
     Surf_Entity = IMG_Load(File);
     
-    JumpFactor = jumpFactor;
-
     glGenTextures(1, &ID_Entity);
     glBindTexture(GL_TEXTURE_2D, ID_Entity);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, Surf_Entity->w, Surf_Entity->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, Surf_Entity->pixels);
     glBindTexture(GL_TEXTURE_2D, 0);
-    MaxSpeedY += jumpFactor;
-    this->Width = Width;
-    this->Height = Height;
+    MaxSpeedY += JumpFactor;
     
     Anim_Control.MaxFrames = MaxFrames;
     

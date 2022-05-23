@@ -24,6 +24,7 @@ bool CApp::OnInit() {
 
     /* Ouverture d'une fenetre et creation d'un contexte OpenGL */
 
+
     SDL_Window* window;
     {
         window = SDL_CreateWindow(
@@ -67,20 +68,18 @@ bool CApp::OnInit() {
     
     Surf_Display = window;
     
-    char img_name[] = "img/yoshi.png";
-    char img_Path[strlen(Abs_path) + strlen(img_name)];
-    strcpy(img_Path, Abs_path);
-    strcat(img_Path + strlen(img_Path), img_name);
-
+    
     CPlayer* tempPlayer = new CPlayer();
-    if ((tempPlayer->OnLoad(img_Path, 64, 64, 8,10)) == false) {
+        printf("please print");
+
+    if ((tempPlayer->OnLoad("players/list.txt",1)) == false) {
         return false;
     }
 
     PlayerList.push_back(tempPlayer);
     
     tempPlayer = new CPlayer();
-    if ((tempPlayer->OnLoad(img_Path, 64, 64, 8,100)) == false) {
+    if ((tempPlayer->OnLoad("players/list.txt",0)) == false) {
         return false;
     }
 

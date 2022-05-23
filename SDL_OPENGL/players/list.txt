@@ -1,1 +1,2 @@
-Chocolate 10 chocolate.png
+img/yoshi.png 64 64 8 1
+img/yoshi.png 64 64 8 4
