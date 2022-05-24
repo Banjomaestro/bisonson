@@ -72,45 +72,9 @@ bool CApp::OnInit() {
     showFPS = false;
     levelNum = 0;
     loadLevel = false;
-    
-    
-    /*CPlayer* tempPlayer = new CPlayer();
-
-    if ((tempPlayer->OnLoad((char *)"players/list.txt",1)) == false) {
-        return false;
-    }
-
-    PlayerList.push_back(tempPlayer);
-    
-    tempPlayer = new CPlayer();
-    if ((tempPlayer->OnLoad((char *)"players/list.txt",0)) == false) {
-        return false;
-    }
-
-    PlayerList.push_back(tempPlayer);
-    
-    char file_name[] = "map/1.area";
-    if (CArea::AreaControl.OnLoad(file_name, Abs_path) == false) {
-        return false;
-    }
+    numberOfLevels = 3;
     
     our_font.init("font/Fiesta.ttf", 25 );
-
-    PlayerList[0]->X = 100;
-    PlayerList[0]->Y = -150;
-    PlayerList[0]->selected = true;
-    PlayerList[1]->X = 300;
-    PlayerList[1]->Y = -150;
-
-    CEntity::EntityList.push_back(PlayerList[0]);
-    CEntity::EntityList.push_back(PlayerList[1]);
-
-    CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
-    //CCamera::CameraControl.SetPos(WINDOW_WIDTH/2-TILE_SIZE/2, -WINDOW_HEIGHT/2+TILE_SIZE/2);
-    CCamera::CameraControl.SetTarget(&PlayerList[0]->X, &PlayerList[0]->Y);*/
-
-    our_font.init("font/Fiesta.ttf", 25 );
-    //CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
 
    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, "Food vs Humans");
     

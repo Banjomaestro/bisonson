@@ -11,7 +11,10 @@
 void CApp::OnLoop() {
     CFPS::FPSControl.OnLoop();
 
-    if(loadLevel){
+    if(loadLevel && levelNum >= numberOfLevels){
+        isMenu = true;
+    }
+    else if(loadLevel){
         theLevel.OnLoad("levels/list.txt",levelNum, &PlayerList, &CEntity::EntityList);
         loadLevel = false;
         levelNum++;

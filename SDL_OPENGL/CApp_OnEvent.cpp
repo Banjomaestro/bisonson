@@ -37,6 +37,7 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
                 
             case SDLK_SPACE:
                 PlayerList[PlayerNB]->Jump();
+                loadLevel = true;
                 break;
                 
             case SDLK_TAB:

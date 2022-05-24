@@ -54,6 +54,7 @@ private:
     glfreetype::font_data our_font;
     int iterations;
     std::string description;
+    int numberOfLevels;
     
     static std::vector<CPlayer*> PlayerList;
     int PlayerNB;
