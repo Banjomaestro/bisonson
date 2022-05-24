@@ -13,6 +13,7 @@ void CApp::OnLoop() {
 
     if(loadLevel && levelNum >= numberOfLevels){
         isMenu = true;
+        levelNum = 0;
     }
     else if(loadLevel){
         theLevel.OnLoad("levels/list.txt",levelNum, &PlayerList, &CEntity::EntityList);
