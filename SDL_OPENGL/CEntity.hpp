@@ -15,6 +15,7 @@
 #include "CCamera.hpp"
 #include "CFPS.hpp"
 #include "CSurface.hpp"
+#include <SFML/Audio.hpp>
 
 enum {
     ENTITY_TYPE_GENERIC = 0,
@@ -37,6 +38,9 @@ protected:
     CAnimation Anim_Control;
     SDL_Surface* Surf_Entity;
     GLuint ID_Entity;
+    sf::SoundBuffer jumpBuffer;
+    sf::Sound jumpSound;
+
     
 public:
     float X;

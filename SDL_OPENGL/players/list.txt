@@ -1,2 +1,2 @@
-img/chocolate.png 34 64 1 1
-img/chocolate.png 34 64 8 4
+img/chocolate.png 34 64 1 1 sound/jump2.wav
+img/chocolate.png 34 64 8 4 sound/jump1.wav

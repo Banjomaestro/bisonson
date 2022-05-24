@@ -4,7 +4,6 @@
 //
 //  Created by MissBidule on 30/12/2021.
 //
-
 #include <stdio.h>
 #include "CApp.h"
 
@@ -34,7 +33,15 @@ void CApp::OnRender() {
     std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
 
     /*Affiche du texte*/
-    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);
+    int middlew = 0;
+    int middleh = 0;
+    SDL_GetWindowSize(Surf_Display,&middlew,&middleh);
+
+    if(isMenu)
+        glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "Food vs Humans \npress [Enter] to play !");
+    
+    if(showFPS)
+        glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);
     
     /* Echange du front et du back buffer : mise a jour de la fenetre */
     SDL_GL_SwapWindow(Surf_Display);

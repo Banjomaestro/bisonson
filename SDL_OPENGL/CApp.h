@@ -38,7 +38,7 @@
 #include "CAnimation.hpp"
 #include "Define.h"
 #include "TextRenderer.hpp"
-#include <SFML/Audio.hpp>
+#include "CLevel.hpp"
 
 
 
@@ -54,10 +54,14 @@ private:
     glfreetype::font_data our_font;
     int iterations;
     std::string description;
-    sf::Music music;
     
     static std::vector<CPlayer*> PlayerList;
     int PlayerNB;
+    bool isMenu;
+    bool showFPS;
+    int levelNum;
+    bool loadLevel;
+    CLevel theLevel;
     
 public:
     CApp(char * path);

@@ -45,8 +45,6 @@ int CApp::OnExecute()
 }
 
 int main(int argc, char * argv[]) {
-                printf("please print");
-
     CApp theApp((char *) argv[0]);
     return theApp.OnExecute();
 }

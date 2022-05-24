@@ -67,10 +67,14 @@ bool CApp::OnInit() {
     }
     
     Surf_Display = window;
+
+    isMenu = true;
+    showFPS = false;
+    levelNum = 0;
+    loadLevel = false;
     
     
-    CPlayer* tempPlayer = new CPlayer();
-        printf("please print");
+    /*CPlayer* tempPlayer = new CPlayer();
 
     if ((tempPlayer->OnLoad((char *)"players/list.txt",1)) == false) {
         return false;
@@ -90,7 +94,7 @@ bool CApp::OnInit() {
         return false;
     }
     
-    our_font.init("font/Fiesta.ttf", 25 /* size */);
+    our_font.init("font/Fiesta.ttf", 25 );
 
     PlayerList[0]->X = 100;
     PlayerList[0]->Y = -150;
@@ -103,14 +107,14 @@ bool CApp::OnInit() {
 
     CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
     //CCamera::CameraControl.SetPos(WINDOW_WIDTH/2-TILE_SIZE/2, -WINDOW_HEIGHT/2+TILE_SIZE/2);
-    CCamera::CameraControl.SetTarget(&PlayerList[0]->X, &PlayerList[0]->Y);
+    CCamera::CameraControl.SetTarget(&PlayerList[0]->X, &PlayerList[0]->Y);*/
+
+    our_font.init("font/Fiesta.ttf", 25 );
+    //CCamera::CameraControl.TargetMode = TARGET_MODE_CENTER;
+
+   glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, "Food vs Humans");
     
     onWindowResized(WINDOW_WIDTH, WINDOW_HEIGHT);
-
-    if (!music.openFromFile("sound/night light.wav")){
-        return -1; // error
-        printf("faillll");
-    }
     
 
     

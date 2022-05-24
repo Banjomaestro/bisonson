@@ -10,6 +10,13 @@
 
 void CApp::OnLoop() {
     CFPS::FPSControl.OnLoop();
+
+    if(loadLevel){
+        theLevel.OnLoad("levels/list.txt",levelNum, &PlayerList, &CEntity::EntityList);
+        loadLevel = false;
+    }
+    
+
     for (int i = 0; i < CEntity::EntityList.size(); i++) {
         if (!CEntity::EntityList[i]) continue;
 

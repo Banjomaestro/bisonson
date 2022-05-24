@@ -48,6 +48,7 @@ bool CEntity::OnLoad(char* infoFile, int playerNum) {
         return false;
     }
     char File[255];
+    char jumpAudio[255];
     int MaxFrames = 0;
 
     char c;
@@ -61,9 +62,14 @@ bool CEntity::OnLoad(char* infoFile, int playerNum) {
          lines++;
     } 
     
-    fscanf(FileHandle, "%s %d %d %d %f", File, &Width, &Height, &MaxFrames, &JumpFactor);
+    fscanf(FileHandle, "%s %d %d %d %f %s", File, &Width, &Height, &MaxFrames, &JumpFactor, jumpAudio);
+
+     if (!jumpBuffer.loadFromFile(jumpAudio))
+        return -1;
 
     Surf_Entity = IMG_Load(File);
+    jumpSound.setBuffer(jumpBuffer);
+
     
     glGenTextures(1, &ID_Entity);
     glBindTexture(GL_TEXTURE_2D, ID_Entity);
@@ -219,7 +225,8 @@ bool CEntity::Jump() {
     if (!CanJump) return false;
     
     SpeedY = MaxSpeedY+JumpFactor;
-    
+    jumpSound.play();
+
     return true;
 }
 
