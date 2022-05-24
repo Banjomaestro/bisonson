@@ -16,9 +16,10 @@ CPlayer::CPlayer() {
     selected = false;
 }
 
-bool CPlayer::OnLoad(char* File, int playerNum) {
+bool CPlayer::OnLoad(char* File, int playerNum, int X, int Y, bool selected) {
 
-    if (!CEntity::OnLoad(File, playerNum)) return false;
+    if (!CEntity::OnLoad(File, playerNum, X, Y)) return false;
+    this->selected = selected;
     return true;
 }
 

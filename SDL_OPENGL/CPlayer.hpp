@@ -19,7 +19,7 @@ public:
 public:
     CPlayer();
     
-    bool OnLoad(char* File, int playerNum);
+    bool OnLoad(char* File, int playerNum, int X, int Y, bool selected);
     void OnLoop();
     void OnRender();
     void OnCleanup();

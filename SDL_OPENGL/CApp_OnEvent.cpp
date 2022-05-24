@@ -21,8 +21,11 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
     printf("touche pressee (code = %d)\n", sym);
     if ((sym == SDLK_q || sym == SDLK_ESCAPE))
         OnExit();
+
+    if(sym==102){
+        showFPS = !showFPS;
+    }
     if(!isMenu){
-        printf("whattt");
         switch (sym) {
             case SDLK_LEFT:
                 PlayerList[PlayerNB]->MoveLeft = true;

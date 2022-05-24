@@ -39,7 +39,7 @@ CEntity::~CEntity() {
     
 }
 
-bool CEntity::OnLoad(char* infoFile, int playerNum) {
+bool CEntity::OnLoad(char* infoFile, int playerNum, int X, int Y) {
     
     
     FILE* FileHandle = fopen(infoFile, "r");
@@ -79,6 +79,8 @@ bool CEntity::OnLoad(char* infoFile, int playerNum) {
     MaxSpeedY += JumpFactor;
     
     Anim_Control.MaxFrames = MaxFrames;
+    this->X = X;
+    this->Y = Y;
     
     return true;
 }
