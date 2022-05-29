@@ -18,17 +18,21 @@ void CApp::OnRender() {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
     glEnable(GL_TEXTURE_2D);
-    
-    CArea::AreaControl.OnRender();
-    
-    for (int i = 0; i < CEntity::EntityList.size(); i++) {
-        if (!CEntity::EntityList[i]) continue;
 
-        CEntity::EntityList[i]->OnRender();
+    if(!isMenu && !gameEnd){
+    
+        CArea::AreaControl.OnRender();
+        
+        for (int i = 0; i < CEntity::EntityList.size(); i++) {
+            if (!CEntity::EntityList[i]) continue;
+
+            CEntity::EntityList[i]->OnRender();
+        }
     }
     
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);
+
     
     std::string FPS_Str = std::to_string(CFPS::FPSControl.GetFPS());
 
@@ -39,6 +43,9 @@ void CApp::OnRender() {
 
     if(isMenu)
         glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "Food vs Humans \npress [Enter] to play !");
+
+    if(gameEnd)
+        glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "The Game is over, go enjoy the real world.");
     
     if(showFPS)
         glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);

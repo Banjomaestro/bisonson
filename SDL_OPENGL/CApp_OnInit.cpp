@@ -73,6 +73,7 @@ bool CApp::OnInit() {
     levelNum = 0;
     loadLevel = false;
     numberOfLevels = 3;
+    gameEnd = false;
     
     our_font.init("font/Fiesta.ttf", 25 );
 

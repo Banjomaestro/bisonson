@@ -1,2 +1,10 @@
-img/chocolate.png 34 64 1 1 sound/jump2.wav
-img/chocolate.png 34 64 8 4 sound/jump1.wav
+img/chocolate.png 32 64 0 2 sound/jump2.wav
+img/white_chocolate.png 32 32 0 3 sound/jump2.wav
+img/waffle.png 64 32 0 0 sound/jump2.wav
+img/salmon-sushi.png 32 64 0 2 sound/jump1.wav
+img/tuna-sushi.png 64 32 0 0 sound/jump1.wav
+img/maki-sushi.png 32 32 0 3 sound/jump1.wav
+img/wine.png 32 64 0 2 sound/jump1.wav
+img/croissant.png 64 32 0 0 sound/jump1.wav
+img/cheese.png 32 32 0 3 sound/jump1.wav
+

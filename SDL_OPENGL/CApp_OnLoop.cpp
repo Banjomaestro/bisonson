@@ -12,7 +12,7 @@ void CApp::OnLoop() {
     CFPS::FPSControl.OnLoop();
 
     if(loadLevel && levelNum >= numberOfLevels){
-        isMenu = true;
+        gameEnd = true;
         levelNum = 0;
     }
     else if(loadLevel){

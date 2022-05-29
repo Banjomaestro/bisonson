@@ -62,6 +62,7 @@ private:
     bool showFPS;
     int levelNum;
     bool loadLevel;
+    bool gameEnd;
     CLevel theLevel;
     
 public:
