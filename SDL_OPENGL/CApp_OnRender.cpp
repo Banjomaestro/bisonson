@@ -42,7 +42,7 @@ void CApp::OnRender() {
     SDL_GetWindowSize(Surf_Display,&middlew,&middleh);
 
     if(isMenu)
-        glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "Food vs Humans \npress [Enter] to play !");
+        glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "Food vs Humans \npress [Enter] to play !\nOu cliquez");
 
     if(gameEnd)
         glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "The Game is over, go enjoy the real world.");

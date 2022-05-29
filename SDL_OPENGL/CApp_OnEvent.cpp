@@ -56,6 +56,14 @@ void CApp::OnKeyDown(SDL_Keycode sym) {
         }
 }
 
+void CApp::OnLButtonUp(int mX, int mY) {
+
+    if(isMenu){
+        isMenu = false;
+        loadLevel = true;
+    }
+}
+
 void CApp::OnKeyUp(SDL_Keycode sym) {
     if(!isMenu){
         switch (sym) {

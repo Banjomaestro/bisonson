@@ -74,6 +74,7 @@ public:
     void OnEvent(SDL_Event* Event);
     void OnKeyDown(SDL_Keycode sym);
     void OnKeyUp(SDL_Keycode sym);
+    void OnLButtonUp(int mX, int mY);
     void OnExit();
     void OnLoop();
     void OnRender();
