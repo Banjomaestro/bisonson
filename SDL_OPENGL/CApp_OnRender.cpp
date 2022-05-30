@@ -48,7 +48,7 @@ void CApp::OnRender() {
         glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "The Game is over, go enjoy the real world.");
     
     if(showFPS)
-        glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, FPS_Str);
+        glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 850 /* ypos */, FPS_Str);
     
     /* Echange du front et du back buffer : mise a jour de la fenetre */
     SDL_GL_SwapWindow(Surf_Display);
