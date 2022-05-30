@@ -294,6 +294,8 @@ bool CEntity::PosValidTile(CTile *Tile) {
     
     if (Tile->TypeID == TILE_TYPE_END) eated = true;
     
+    if (Tile->TypeID == TILE_TYPE_OOB) Y = 100;
+    
     return true;
 }
 
