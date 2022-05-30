@@ -16,7 +16,7 @@ void CApp::OnLoop() {
         levelNum = 0;
     }
     else if(loadLevel){
-        theLevel.OnLoad("levels/list.txt",levelNum, &PlayerList, &CEntity::EntityList);
+        theLevel.OnLoad((char*)"levels/list.txt",levelNum, &PlayerList, &CEntity::EntityList);
         loadLevel = false;
         levelNum++;
     }

@@ -91,7 +91,7 @@ public:
     virtual ~CEntity();
     
 public:
-    virtual bool OnLoad(char* File, int playerNum, int X, int Y);
+    virtual bool OnLoad(char* File, int playerNum, int X, int Y, bool selected = false);
     virtual void OnLoop();
     virtual void OnRender();
     virtual void OnCleanup();

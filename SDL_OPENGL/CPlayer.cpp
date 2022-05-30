@@ -51,7 +51,7 @@ void CPlayer::OnAnimate() {
 }
 
 bool CPlayer::OnCollision(CEntity *Entity) {
-    Jump();
+    //rien
     
     return true;
 }

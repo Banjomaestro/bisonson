@@ -39,7 +39,7 @@ CEntity::~CEntity() {
     
 }
 
-bool CEntity::OnLoad(char* infoFile, int playerNum, int X, int Y) {
+bool CEntity::OnLoad(char* infoFile, int playerNum, int X, int Y, bool selected) {
     
     
     FILE* FileHandle = fopen(infoFile, "r");

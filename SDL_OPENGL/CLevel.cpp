@@ -49,7 +49,7 @@ bool CLevel::OnLoad(char* levelFile, int levelNum, std::vector<CPlayer*>* Player
     PlayerList->at(0)->selected = true;
 
     
-    if (CArea::AreaControl.OnLoad(mapFile, "") == false) {
+    if (CArea::AreaControl.OnLoad(mapFile, (char*)"") == false) {
         return false;
     }
     

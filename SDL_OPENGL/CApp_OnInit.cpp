@@ -75,9 +75,9 @@ bool CApp::OnInit() {
     numberOfLevels = 3;
     gameEnd = false;
     
-    our_font.init("font/Fiesta.ttf", 25 );
+    our_font.init("font/Baby_Doll.ttf", 25 );
 
-   glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, "Food vs Humans");
+    glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 600 /* ypos */, "Food vs Humans");
     
     onWindowResized(WINDOW_WIDTH, WINDOW_HEIGHT);
     
