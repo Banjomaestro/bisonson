@@ -11,6 +11,8 @@
 void CApp::OnLoop() {
     CFPS::FPSControl.OnLoop();
 
+    if (PlayerList.size() > 0) loadLevel = PlayerList[PlayerNB]->CEntity::isEated();
+    
     if(loadLevel && levelNum >= numberOfLevels){
         gameEnd = true;
         levelNum = 0;
@@ -20,7 +22,6 @@ void CApp::OnLoop() {
         loadLevel = false;
         levelNum++;
     }
-    
 
     for (int i = 0; i < CEntity::EntityList.size(); i++) {
         if (!CEntity::EntityList[i]) continue;

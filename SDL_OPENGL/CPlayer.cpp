@@ -9,15 +9,11 @@
 
 CPlayer::CPlayer() {
     Type = ENTITY_TYPE_PLAYER;
-    Col_Width_L = 8;
-    Col_Width_R = 24;
-    Col_Height_T = 25;
-    Col_Height_B = 39;
     selected = false;
 }
 
 bool CPlayer::OnLoad(char* File, int playerNum, int X, int Y, bool selected) {
-
+    
     if (!CEntity::OnLoad(File, playerNum, X, Y)) return false;
     this->selected = selected;
     return true;

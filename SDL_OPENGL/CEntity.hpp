@@ -40,6 +40,7 @@ protected:
     GLuint ID_Entity;
     sf::SoundBuffer jumpBuffer;
     sf::Sound jumpSound;
+    bool eated;
 
     
 public:
@@ -105,6 +106,7 @@ public:
     
 public:
     bool Collides(int oX, int oY, int oX2, int oY2);
+    bool isEated() {return eated;}
     
 private:
     bool PosValid(int NewX, int NewY);

@@ -8,15 +8,15 @@
 #ifndef Define_h
 #define Define_h
 
-#define MAP_WIDTH 40
-#define MAP_HEIGHT 40
+#define MAP_WIDTH 30
+#define MAP_HEIGHT 10
 
-#define WINDOW_WIDTH 640
-#define WINDOW_HEIGHT 640
+#define WINDOW_WIDTH 900
+#define WINDOW_HEIGHT 900
 
-#define GL_VIEW_SIZE 640.
+#define GL_VIEW_SIZE 1000
 
-#define TILE_SIZE 16
+#define TILE_SIZE 64
 
 #include <stdint.h>
 

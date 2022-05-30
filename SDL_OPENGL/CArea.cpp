@@ -80,14 +80,16 @@ void CArea::OnRender() {
     
     int FirstID;
     
-    if (CCamera::CameraControl.GetTargetMode() == TARGET_MODE_NORMAL) {
-        FirstID = -CameraX / MapWidth;
-        FirstID = FirstID - ((-CameraY / MapHeight) * AreaSize);
-    }
-    else {
-        FirstID = -(CameraX + WINDOW_WIDTH/2) / MapWidth;
-        FirstID = FirstID - ((-(CameraY - WINDOW_HEIGHT/2) / MapHeight) * AreaSize);
-    }
+    FirstID = 0;
+    
+//    if (CCamera::CameraControl.GetTargetMode() == TARGET_MODE_NORMAL) {
+//        FirstID = -CameraX / MapWidth;
+//        FirstID = FirstID - ((-CameraY / MapHeight) * AreaSize);
+//    }
+//    else {
+//        FirstID = -(CameraX + WINDOW_WIDTH/2) / MapWidth;
+//        FirstID = FirstID - ((-(CameraY - WINDOW_HEIGHT/2) / MapHeight) * AreaSize);
+//    }
         
     for (int i = 0; i < 4; i++) {
         int ID = FirstID + ((i / 2) * AreaSize) + (i%2);

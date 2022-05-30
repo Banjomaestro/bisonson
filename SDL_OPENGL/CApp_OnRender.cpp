@@ -10,7 +10,7 @@
 void CApp::OnRender() {
     /* Placer ici le code de dessin */
     glClear(GL_COLOR_BUFFER_BIT);
-    glClearColor(7.0/255,105.0/255,151.0/255,1);
+    glClearColor(229.0/255,183.0/255,131.0/255,1);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 

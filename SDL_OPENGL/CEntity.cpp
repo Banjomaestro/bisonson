@@ -32,7 +32,7 @@ CEntity::CEntity() {
     Col_Width_L = Col_Width_R = 0;
     Col_Height_T = Col_Height_B = 0;
     
-    CanJump = false;
+    CanJump = eated = false;
 }
 
 CEntity::~CEntity() {
@@ -62,7 +62,7 @@ bool CEntity::OnLoad(char* infoFile, int playerNum, int X, int Y, bool selected)
          lines++;
     } 
     
-    fscanf(FileHandle, "%s %d %d %d %f %s", File, &Width, &Height, &MaxFrames, &JumpFactor, jumpAudio);
+    fscanf(FileHandle, "%s %d %d %d %f %d %d %d %d %s", File, &Width, &Height, &MaxFrames, &JumpFactor, &Col_Width_L, &Col_Width_R, &Col_Height_T, &Col_Height_B, jumpAudio);
 
      if (!jumpBuffer.loadFromFile(jumpAudio))
         return -1;
@@ -291,6 +291,8 @@ bool CEntity::PosValidTile(CTile *Tile) {
     if (Tile == NULL) return true;
     
     if (Tile->TypeID == TILE_TYPE_BLOCK) return false;
+    
+    if (Tile->TypeID == TILE_TYPE_END) eated = true;
     
     return true;
 }
