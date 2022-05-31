@@ -70,7 +70,7 @@ bool CApp::OnInit() {
 
     isMenu = true;
     showFPS = false;
-    levelNum = 0;
+    levelNum = 3;
     loadLevel = false;
     numberOfLevels = 3;
     gameEnd = false;
