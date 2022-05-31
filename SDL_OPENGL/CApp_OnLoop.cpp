@@ -16,10 +16,8 @@ void CApp::OnLoop() {
     if(loadLevel && levelNum >= numberOfLevels){
         gameEnd = true;
         levelNum = 0;
-
-        
     }
-    else if(loadLevel){
+    else if(loadLevel && levelNum<numberOfLevels){
         theLevel.OnLoad((char*)"levels/list.txt",levelNum, &PlayerList, &CEntity::EntityList);
         loadLevel = false;
         levelNum++;

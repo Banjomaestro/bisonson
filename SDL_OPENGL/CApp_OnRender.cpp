@@ -45,7 +45,7 @@ void CApp::OnRender() {
         glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "Food vs Humans \npress [Enter] or click \nto play !");
 
     if(gameEnd)
-        glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "The Game is over, go enjoy the real world.");
+        glfreetype::print(0, 0, 255, our_font, middlew/2 -50 /* xpos */, middleh/2 /* ypos */, "The Game is over, \ngo enjoy the real world.");
     
     if(showFPS)
         glfreetype::print(0, 0, 255, our_font, 30 /* xpos */, 850 /* ypos */, FPS_Str);
