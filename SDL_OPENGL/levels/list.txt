@@ -1,3 +1,3 @@
 map/level1.area music/chocolate.wav /0 200 -1100/1 300 -1100/2 400 -1100 
 map/level2.area music/france.wav /6 3500 0/7 3400 0/8 3300 
-map/level1.area music/sushi.wav /3 200 -1100/4 300 -1100/5 400 -1100
+map/level3.area music/sushi.wav /3 3600 -950/4 3500 -950/5 3400 -950
